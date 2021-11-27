@@ -108,6 +108,7 @@ $('#addClusterInp').click(function () {
 
         for (i = 0; i < clusterAmount; i++) {
             $('<input>').attr({
+                type : 'number',
                 class: 'input level-inp',
                 id: `cluster-date-${i}`,
                 placeholder: `Cluster ${i+1} value`
