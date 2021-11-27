@@ -141,6 +141,7 @@ $('#updateMemberValue').click(function () {
     updatedresult1.empty();
     updatedresult2.empty();
     finalupdatedvalue.empty();
+    $('#title').empty();
 
     $('#title').append('Updated membership value');
     let sup = `<sup>(1/(${valueOfm}-1))</sup>`;
