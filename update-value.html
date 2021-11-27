@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update membership value</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Calculate Membership Value (Fuzzy C Clustering)</h1>
+        <a href="index.html" class="link"> <i class="fas fa-home"></i> Home</a>
+
+        <p>1) Enter the amount of cluster</p>
+        <input type="number" class="input" id="cluster-amount2" placeholder="Cluster">
+        <p>2) Enter the value of m</p>
+        <input type="number" class="input" id="value-of-m2" placeholder="Value of m">
+
+        <button type="submit" class="addinput" id="addClusterInp">
+            <i class="fas fa-plus-circle"></i> Add input
+        </button>
+        <button type="submit" class="calculateBtn hidden" id="updateMemberValue">
+            <i class="fas fa-chevron-circle-right"></i> Calculate
+        </button>
+        <a href="update-value.html"><button id="resetBtn"><i class="fas fa-redo"></i> Reset</button></a>
+
+        <div id="cluster-input"></div>
+        <img src="img/update-value.png" class="fade-img" alt="">
+
+        <div id="upd-result">
+            <p><b id="title"></b></p>
+            <p id="updated-result1"></p>
+            <p id="updated-result2"></p>
+            <p id="final-updated-value"></p>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="fuzzy-c-means.js"></script>
+
+</body>
+
+</html>

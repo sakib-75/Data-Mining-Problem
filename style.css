@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.link {
+    display: block;
+    margin: 10px 0px;
+    font-size: 18px;
+    color: blue;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid rgb(223, 223, 223);
+}
+
+.text-area {
+    width: 300px !important;
+}
+
+.input {
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    width: 160px;
+    font-size: 18px;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid gray;
+    display: block;
+}
+
+.input:focus {
+    border: 2px solid green;
+    box-shadow: 0 0 5px rgba(0, 128, 38, 0.527);
+}
+
+.calculateBtn,
+.addinput {
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    background-color: #04AA6D;
+    cursor: pointer;
+    display: inline-block;
+    transition-duration: 0.5s;
+}
+
+.addinput {
+    background-color: tomato;
+}
+
+.calculateBtn:hover {
+    background-color: #4F8026;
+}
+
+#resetBtn {
+    display: block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    background-color: rgb(121, 118, 118);
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+#resetBtn:hover {
+    background-color: rgb(119, 118, 118);
+}
+
+.hidden {
+    display: none;
+}
+
+.result {
+    padding: 10px 20px;
+    margin: 50px 0px 100px 0px;
+    font-size: 22px;
+    background-color: rgba(223, 255, 224, 0.836);
+    border-radius: 15px;
+    box-shadow: 0 20px 40px 0 rgb(21 41 62 / 10%);
+}
+
+.example1-img {
+    max-width: 100%;
+}
+
+.level-inp {
+    background-color: #faeaeac7;
+}
+
+.level-inp:focus {
+    background-color: #ffd4d4c7;
+    border: 2px solid green;
+    box-shadow: 0 0 5px rgba(0, 128, 38, 0.527);
+}
+
+.sub-level-inp {
+    margin: 5px 0px 10px 20px;
+    width: 140px;
+    background-color: #fefff0b7;
+}
+
+.sub-level-inp:focus {
+    background-color: #fdffdcb7;
+    border: 2px solid green;
+    box-shadow: 0 0 5px rgba(0, 128, 38, 0.527);
+}
+
+.centroid-title{
+    color: green;
+    font-size: 22px;
+}
+
+.fade-img{
+    margin-top: 50px;
+    display: none;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate reminder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Calculate reminder & Information Gain</h1>
+        <a href="index.html" class="link"> <i class="fas fa-home"></i> Home</a>
+        <img src="img/eq.png" alt="" class="example1-img">
+
+        <input type="number" class="input" id="entropy-value" placeholder="Enter Entropy">
+
+        <p>1) Enter the amount of data (Total rows)</p>
+        <input type="number" class="input" id="total-data">
+        <p>2) Enter the amount of descriptive feature levels</p>
+        <input type="number" class="input" id="ds-feature-amount">
+        <p>3) Enter the amount of descriptive feature sub levels with respect to target feature (Please provide numbers
+            separated by a comma. Such as- 1,2,3...(for 1st level, 2nd level, 3rd level,...)). If field 2 value = 3,
+            then field 3 should be x,x,x (x=number, x>0)</p>
+        <textarea class="input" id="ds-feature-sub-amount"></textarea>
+
+        <button type="submit" class="addinput" id="addReminderInp">
+            <i class="fas fa-plus-circle"></i> Add input
+        </button>
+        <button type="submit" class="calculateBtn hidden" id="reminderCalc">
+            <i class="fas fa-chevron-circle-right"></i> Calculate
+        </button>
+        <a href="reminder.html"><button id="resetBtn"><i class="fas fa-redo"></i> Reset</button></a>
+
+        <div id="createRemInput" class="inputDiv"></div>
+
+        <div></div>
+
+        <div id="rm-result">
+            <p id="rm-result1"></p>
+            <p id="rm-result2"></p>
+            <p id="rm-result3"></p>
+            <p id="rm-final-result"></p>
+            <p id="ig-result"></p>
+        </div>
+
+        <div style="margin-bottom: 200px;"></div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="java-script.js"></script>
+
+</body>
+
+</html>

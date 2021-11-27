@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate entropy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculate entropy</h1>
+        <a href="index.html" class="link"> <i class="fas fa-home"></i> Home</a>
+        <img src="img/example.png" alt="" class="example1-img">
+
+        <p>1) Enter the amount of data (rows amount)</p>
+        <input type="number" class="input" id="data-amount">
+        <p>2) Enter the amount of target feature levels</p>
+        <input type="number" class="input" id="feature-amount">
+
+        <button type="submit" class="addinput" id="addEntropyInp">
+            <i class="fas fa-plus-circle"></i> Add input
+        </button>
+        <button type="submit" class="calculateBtn hidden" id="entropyCalc">
+            <i class="fas fa-chevron-circle-right"></i> Calculate
+        </button>
+        <a href="index.html"><button id="resetBtn"><i class="fas fa-redo"></i> Reset</button></a>
+
+        <div id="createInput"></div>
+        <div id="result">
+            <p id="result1"></p>
+            <p id="result2"></p>
+            <p id="final-result"></p>
+        </div>
+
+        <div style="margin-bottom: 200px;"></div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="java-script.js"></script>
+
+</body>
+
+</html>
