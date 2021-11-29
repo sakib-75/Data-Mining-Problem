@@ -92,8 +92,8 @@ body {
     box-shadow: 0 20px 40px 0 rgb(21 41 62 / 10%);
 }
 
-.example1-img {
-    max-width: 100%;
+.ig-img {
+    max-width: 80%;
 }
 
 .level-inp {
