@@ -172,7 +172,7 @@ $('#updateMemberValue').click(function () {
     }
 
     updatedData = (upper / bottomSum);
-    finalupdatedvalue.append(`<b>Updated Value: ${updatedData}</b>`);
+    finalupdatedvalue.append(`<b>Updated Value: ${updatedData.toFixed(2)}</b>`);
     $('.fade-img').fadeIn();
 
 
