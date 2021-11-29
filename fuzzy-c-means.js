@@ -60,7 +60,8 @@ $('#fuzzycCal').click(function () {
 
     //Step 1 : Find centroid
     let centroidPart1 = 0,
-        centroidPart2 = 0;
+        centroidPart2 = 0,
+        centroidPartCal;
 
     $('#centroid-result').addClass('result');
     let centroidresultpart1 = $('#centroid-result-part1');
@@ -80,8 +81,8 @@ $('#fuzzycCal').click(function () {
 
             }
 
-            let centroidPoartCal = (centroidPart1 / centroidPart2);
-            centroidresultpart1.append(`${centroidPart1.toFixed(3)} &div; ${centroidPart2.toFixed(3)} = ${centroidPoartCal.toFixed(3)} <br><br>`);
+            centroidPartCal = (centroidPart1 / centroidPart2);
+            centroidresultpart1.append(`${centroidPart1.toFixed(3)} &div; ${centroidPart2.toFixed(3)} = ${centroidPartCal.toFixed(3)} <br><br>`);
             $('.fade-img').fadeIn();
 
             centroidPart1 = centroidPart2 = 0;
