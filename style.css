@@ -131,3 +131,18 @@ body {
     margin-top: 50px;
     display: none;
 }
+
+
+@media screen and (max-width: 480px) {
+
+    .fade-img {
+        max-width: 100%;
+    }
+
+    .result,
+    .centroid-title {
+        font-size: 100%;
+    }
+
+
+}
