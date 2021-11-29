@@ -96,6 +96,10 @@ body {
     max-width: 80%;
 }
 
+.f-w-images {
+    max-width: 100%;
+}
+
 .level-inp {
     background-color: #faeaeac7;
 }
@@ -118,12 +122,12 @@ body {
     box-shadow: 0 0 5px rgba(0, 128, 38, 0.527);
 }
 
-.centroid-title{
+.centroid-title {
     color: green;
     font-size: 22px;
 }
 
-.fade-img{
+.fade-img {
     margin-top: 50px;
     display: none;
 }
