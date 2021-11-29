@@ -82,7 +82,7 @@ $('#fuzzycCal').click(function () {
             }
 
             let centroidPoartCal = (centroidPart1 / centroidPart2);
-            centroidresultpart1.append(`${centroidPart1.toFixed(4)} &div; ${centroidPart2.toFixed(4)} = ${centroidPoartCal} <br><br>`);
+            centroidresultpart1.append(`${centroidPart1.toFixed(3)} &div; ${centroidPart2.toFixed(3)} = ${centroidPoartCal.toFixed(3)} <br><br>`);
             $('.fade-img').fadeIn();
 
             centroidPart.push(centroidPoartCal);
