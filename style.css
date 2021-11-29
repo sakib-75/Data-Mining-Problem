@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
+    background-image: url('img/bg.png');
 }
 
 .link {
@@ -13,6 +14,7 @@ body {
     max-width: 900px;
     margin: auto;
     padding: 20px;
+    background-color: white;
     border: 1px solid rgb(223, 223, 223);
 }
 
