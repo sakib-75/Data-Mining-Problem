@@ -64,8 +64,8 @@ $('#fuzzycCal').click(function () {
         centroidPartCal,
         centroid = [];
 
-    $('#centroid-result').addClass('result');
     $('.fade-img').fadeIn();
+    $('#centroid-result').addClass('result');
     let centroidresultpart1 = $('#centroid-result-part1');
     centroidresultpart1.empty();
 
