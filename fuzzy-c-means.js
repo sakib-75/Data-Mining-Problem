@@ -117,7 +117,7 @@ $('#addClusterInp').click(function () {
                 type : 'number',
                 class: 'input level-inp',
                 id: `cluster-date-${i}`,
-                placeholder: `Cluster ${i+1} value`
+                placeholder: `C<sub>${i+1}</sub> distance`
             }).appendTo(parent);
         }
         $(".calculateBtn").show();
