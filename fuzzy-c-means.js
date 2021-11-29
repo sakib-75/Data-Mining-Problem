@@ -67,10 +67,12 @@ $('#fuzzycCal').click(function () {
     $('.fade-img').fadeIn();
     $('#centroid-result').addClass('result');
     let centroidresultpart1 = $('#centroid-result-part1');
+    let centroidresultpart2 = $('#centroid');
     centroidresultpart1.empty();
+    centroidresultpart2.empty();
 
     for (i = 0; i < clusterAmount; i++) { // Cluster loop [0,1,2...]
-        centroidresultpart1.append(`<b class='centroid-title'>Centroid ${i+1}: </b><br><br>`)
+        centroidresultpart1.append(`<b class='centroid-title'>Centroid ${i+1} (C<sub>${i+1}</sub>): </b><br><br>`)
 
         for (d = 0; d < clusterAmount; d++) { // Claster inside part
 
@@ -85,11 +87,14 @@ $('#fuzzycCal').click(function () {
 
             centroidPartCal = (centroidPart1 / centroidPart2);
             centroidresultpart1.append(`${centroidPart1.toFixed(3)} &div; ${centroidPart2.toFixed(3)} = ${centroidPartCal.toFixed(3)} <br><br>`);
-
-            centroid.push(centroidPartCal);
+            centroid.push(centroidPartCal.toFixed(3));
             centroidPart1 = centroidPart2 = 0;
-
+           
         }
+
+        centroidresultpart2.append(`C<sub>${i+1}</sub> : (${centroid}) <br>`);
+        centroid.splice(0, centroid.length);
+
     }
 
 });
