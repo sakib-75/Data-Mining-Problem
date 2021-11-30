@@ -278,7 +278,7 @@ $('#kFoldCalculation').click(function () {
                 }
             }
             m1avgresult.append(`) &div; ${m1Data.length}) <br><br>`);
-            m1avgresult.append(`<span class="putBar">err</span>(M1) : (${m1_sum} &div; ${m1Data.length}) = ${m1_avg}`);
+            m1avgresult.append(`${errm1Bar} : (${m1_sum} &div; ${m1Data.length}) = ${m1_avg}`);
 
 
             m2avgresult.append(`${errm2Bar} : ((`)
@@ -290,7 +290,7 @@ $('#kFoldCalculation').click(function () {
                 }
             }
             m2avgresult.append(`) &div; ${m2Data.length}) <br><br>`);
-            m2avgresult.append(`<span class="putBar">err</span>(M2) : (${m2_sum} &div; ${m2Data.length}) = ${m2_avg}`);
+            m2avgresult.append(`${errm2Bar} : (${m2_sum} &div; ${m2Data.length}) = ${m2_avg}`);
 
             //m1, m2 average sub
             let dBarValue = (m1_avg - m2_avg).toFixed(3);
