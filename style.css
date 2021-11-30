@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
     padding: 20px;
     background-color: white;
@@ -132,6 +132,9 @@ body {
     font-size: 22px;
 }
 
+.putBar {
+    border-top: 2px solid black;
+}
 
 
 
