@@ -197,7 +197,7 @@ $('#reminderCalc').click(function () {
 
         forLevel[i] = levelProbability[i] * prEntropy;
         reminder += forLevel[i];
-        
+
         //.................result...................
         result3.append(`(${prEntropy.toFixed(4)}))`);
         //set previous value to 0
@@ -205,7 +205,7 @@ $('#reminderCalc').click(function () {
         firstResult = 1;
 
     }
-    
+
     ig = entropy - reminder;
     //..........................Finall result..........................
     finalResult.append(`<b>Reminder = ${reminder}</b>`);
@@ -234,7 +234,90 @@ function levelInputCheck(dsF, subF) {
 //K-fold cross-validation
 
 $('#kFoldCalculation').click(function () {
-    $('.fade-img').fadeIn();
+
+    let m1input = $('#m1-input').val();
+    let m2input = $('#m2-input').val();
+
+    let m1Data = m1input.split(",").map((num) => {
+        return +num;
+    });
+
+    let m2Data = m2input.split(",").map((num) => {
+        return +num;
+    });
+
+    if (m1Data != '' && m1input != '') {
+        if (m1Data.length == m2Data.length) {
+
+            let m1_sum, m2_sum, m1_avg, m2_avg;
+
+            m1_sum = m1Data.reduce((a, b) => a + b);
+            m2_sum = m2Data.reduce((a, b) => a + b);
+            m1_avg = (m1_sum / (m1Data.length));
+            m2_avg = (m2_sum / (m2Data.length));
+
+            //Result
+            let errm1Bar = '<span class="putBar">err</span>(M1)';
+            let errm2Bar = '<span class="putBar">err</span>(M2)';
+            let dBar = '<span class="putBar">d</span>';
+
+            $('.fade-img').fadeIn();
+            $('#k-fold-result').addClass('result');
+            let m1avgresult = $('#m1-avg-result');
+            let m2avgresult = $('#m2-avg-result');
+            m1avgresult.empty();
+            m2avgresult.empty();
+
+            //m1, m2 average
+            m1avgresult.append(`${errm1Bar} : ((`)
+            for (i = 0; i < m1Data.length; i++) {
+                if (i == (m1Data.length - 1)) {
+                    m1avgresult.append(`${m1Data[i]})`);
+                } else {
+                    m1avgresult.append(`${m1Data[i]} + `);
+                }
+            }
+            m1avgresult.append(`) &div; ${m1Data.length}) <br><br>`);
+            m1avgresult.append(`<span class="putBar">err</span>(M1) : (${m1_sum} &div; ${m1Data.length}) = ${m1_avg}`);
+
+
+            m2avgresult.append(`${errm2Bar} : ((`)
+            for (i = 0; i < m2Data.length; i++) {
+                if (i == (m2Data.length - 1)) {
+                    m2avgresult.append(`${m2Data[i]})`);
+                } else {
+                    m2avgresult.append(`${m2Data[i]} + `);
+                }
+            }
+            m2avgresult.append(`) &div; ${m2Data.length}) <br><br>`);
+            m2avgresult.append(`<span class="putBar">err</span>(M2) : (${m2_sum} &div; ${m2Data.length}) = ${m2_avg}`);
+
+            //m1, m2 average sub
+            let errordiffresult = $('#error-diff-result');
+            errordiffresult.empty();
+            errordiffresult.append(`${dBar} : ${errm1Bar} - ${errm2Bar} <br><br>`);
+            errordiffresult.append(`${dBar} : (${m1_avg} - ${m2_avg}) <br><br>`);
+            errordiffresult.append(`${dBar} : ${(m1_avg - m2_avg).toFixed(3)}`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        } else {
+            alert('M1 and M2 must be same length');
+        }
+    } else {
+        alert('Please enter all field')
+    }
 
 
 });
