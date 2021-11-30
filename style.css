@@ -100,6 +100,11 @@ body {
     max-width: 100%;
 }
 
+.fade-img {
+    margin-top: 50px;
+    display: none;
+}
+
 .level-inp {
     background-color: #faeaeac7;
 }
@@ -127,10 +132,7 @@ body {
     font-size: 22px;
 }
 
-.fade-img {
-    margin-top: 50px;
-    display: none;
-}
+
 
 
 @media screen and (max-width: 480px) {
