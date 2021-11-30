@@ -121,6 +121,7 @@ $('#addReminderInp').click(function () {
     } else {
         alert('Please enter all field(1,2,3). Descriptive feature (field 2) & sub levels (field 3) should be match and every value of field 3 must be grater than 0');
     }
+
 });
 
 
@@ -225,3 +226,15 @@ function levelInputCheck(dsF, subF) {
         return false;
     }
 }
+
+
+
+
+
+//K-fold cross-validation
+
+$('#kFoldCalculation').click(function () {
+    $('.fade-img').fadeIn();
+
+
+});
