@@ -293,7 +293,7 @@ $('#kFoldCalculation').click(function () {
             m2avgresult.append(`<span class="putBar">err</span>(M2) : (${m2_sum} &div; ${m2Data.length}) = ${m2_avg}`);
 
             //m1, m2 average sub
-            let dBarValue = m1_avg - m2_avg;
+            let dBarValue = (m1_avg - m2_avg);
             let errordiffresult = $('#error-diff-result');
             errordiffresult.empty();
             errordiffresult.append(`${dBar} : ${errm1Bar} - ${errm2Bar} <br><br>`);
@@ -322,6 +322,16 @@ $('#kFoldCalculation').click(function () {
 
             standard_deviation = (std(m1m2SubArr, dBarValue)).toFixed(4); // Standard deviation
             stdresult.append(`Standard Deviation : &radic;(${std_sub2} &div; ${m1Data.length}) = ${standard_deviation}`);
+
+            //Final Result
+            let kfold = $('#k-fold');
+            kfold.empty();
+
+            let sdpart, kfold_result;
+            sdpart = (standard_deviation / Math.sqrt(m1Data.length));
+            kfold_result = (dBarValue / sdpart).toFixed(4);
+            kfold.append(`t = (${dBarValue.toFixed(2)} &div; (${standard_deviation} &div; &radic;${m1Data.length})) <br><br>`);
+            kfold.append(`t = ${kfold_result}`);
 
 
 
