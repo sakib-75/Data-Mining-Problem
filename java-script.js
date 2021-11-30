@@ -253,8 +253,8 @@ $('#kFoldCalculation').click(function () {
 
             m1_sum = m1Data.reduce((a, b) => a + b);
             m2_sum = m2Data.reduce((a, b) => a + b);
-            m1_avg = (m1_sum / (m1Data.length));
-            m2_avg = (m2_sum / (m2Data.length));
+            m1_avg = (m1_sum / (m1Data.length)).toFixed(4);
+            m2_avg = (m2_sum / (m2Data.length)).toFixed(4);
 
             //Result
             let errm1Bar = '<span class="putBar">err</span>(M1)';
@@ -293,12 +293,12 @@ $('#kFoldCalculation').click(function () {
             m2avgresult.append(`<span class="putBar">err</span>(M2) : (${m2_sum} &div; ${m2Data.length}) = ${m2_avg}`);
 
             //m1, m2 average sub
-            let dBarValue = (m1_avg - m2_avg);
+            let dBarValue = (m1_avg - m2_avg).toFixed(4);
             let errordiffresult = $('#error-diff-result');
             errordiffresult.empty();
             errordiffresult.append(`${dBar} : ${errm1Bar} - ${errm2Bar} <br><br>`);
             errordiffresult.append(`${dBar} : (${m1_avg} - ${m2_avg}) <br><br>`);
-            errordiffresult.append(`${dBar} : ${(dBarValue).toFixed(3)}`);
+            errordiffresult.append(`${dBar} : ${dBarValue}`);
 
 
             //STD
@@ -314,7 +314,7 @@ $('#kFoldCalculation').click(function () {
                 m1m2SubArr[i] = (m1_m2_sub.toFixed(2));
 
                 std_sub = (stdPart1(m1m2SubArr[i], dBarValue)).toFixed(4); // (value - length)^2
-                stdresult1.append(`(${m1m2SubArr[i]} - ${dBarValue.toFixed(2)})<sup>2</sup> = ${std_sub} <br><br>`);
+                stdresult1.append(`(${m1m2SubArr[i]} - ${dBarValue})<sup>2</sup> = ${std_sub} <br><br>`);
             }
 
             std_sub2 = (stdPart2(m1m2SubArr, dBarValue)).toFixed(4); // Summation
@@ -330,18 +330,8 @@ $('#kFoldCalculation').click(function () {
             let sdpart, kfold_result;
             sdpart = (standard_deviation / Math.sqrt(m1Data.length));
             kfold_result = (dBarValue / sdpart).toFixed(4);
-            kfold.append(`t = (${dBarValue.toFixed(2)} &div; (${standard_deviation} &div; &radic;${m1Data.length})) <br><br>`);
+            kfold.append(`t = (${dBarValue} &div; (${standard_deviation} &div; &radic;${m1Data.length})) <br><br>`);
             kfold.append(`t = ${kfold_result}`);
-
-
-
-
-
-
-
-
-
-
 
 
         } else {
