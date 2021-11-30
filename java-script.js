@@ -249,7 +249,7 @@ $('#kFoldCalculation').click(function () {
     if (m1Data != '' && m1input != '') {
         if (m1Data.length == m2Data.length) {
 
-            let m1_sum, m2_sum, m1_avg, m2_avg;
+            let m1_sum, m2_sum, m1_avg, m2_avg, m1_m2_sub, m1m2SubArr = [];
 
             m1_sum = m1Data.reduce((a, b) => a + b);
             m2_sum = m2Data.reduce((a, b) => a + b);
@@ -293,13 +293,35 @@ $('#kFoldCalculation').click(function () {
             m2avgresult.append(`<span class="putBar">err</span>(M2) : (${m2_sum} &div; ${m2Data.length}) = ${m2_avg}`);
 
             //m1, m2 average sub
+            let dBarValue = m1_avg - m2_avg;
             let errordiffresult = $('#error-diff-result');
             errordiffresult.empty();
             errordiffresult.append(`${dBar} : ${errm1Bar} - ${errm2Bar} <br><br>`);
             errordiffresult.append(`${dBar} : (${m1_avg} - ${m2_avg}) <br><br>`);
-            errordiffresult.append(`${dBar} : ${(m1_avg - m2_avg).toFixed(3)}`);
+            errordiffresult.append(`${dBar} : ${(dBarValue).toFixed(3)}`);
 
 
+            //STD
+            let standard_deviation, std_sub, std_sub2;
+            let stdresult1 = $('#std1');
+            let stdresult = $('#std-result');
+            stdresult1.empty();
+            stdresult.empty();
+
+            stdresult1.append('Standard Deviation Calculation: <br><br>')
+            for (i = 0; i < m1Data.length; i++) {
+                m1_m2_sub = (m1Data[i] - m2Data[i]);
+                m1m2SubArr[i] = (m1_m2_sub.toFixed(2));
+
+                std_sub = (stdPart1(m1m2SubArr[i], dBarValue)).toFixed(4); // (value - length)^2
+                stdresult1.append(`(${m1m2SubArr[i]} - ${dBarValue.toFixed(2)})<sup>2</sup> = ${std_sub} <br><br>`);
+            }
+
+            std_sub2 = (stdPart2(m1m2SubArr, dBarValue)).toFixed(4); // Summation
+            stdresult1.append(`Summation: ${std_sub2}`);
+
+            standard_deviation = (std(m1m2SubArr, dBarValue)).toFixed(4); // Standard deviation
+            stdresult.append(`Standard Deviation : &radic;(${std_sub2} &div; ${m1Data.length}) = ${standard_deviation}`);
 
 
 
@@ -321,3 +343,41 @@ $('#kFoldCalculation').click(function () {
 
 
 });
+
+
+function std(arr, dbarVal) {
+    // Assigning (value - mean) ^ 2 to every array item
+    arr = arr.map((k) => {
+        return (k - dbarVal) ** 2;
+    })
+
+    // Calculating the sum of updated array
+    let sum = arr.reduce((acc, curr) => acc + curr, 0);
+
+    // Calculating the variance
+    let variance = sum / arr.length;
+
+    // Returning the Standered deviation
+    return Math.sqrt(variance);
+
+}
+
+
+
+function stdPart1(arrVal, dbarVal) {
+    return (arrVal - dbarVal) ** 2;
+
+}
+
+
+function stdPart2(arr, dbarVal) {
+    // Assigning (value - mean) ^ 2 to every array item
+    arr = arr.map((k) => {
+        return (k - dbarVal) ** 2;
+    })
+
+    // Calculating the sum of updated array
+    let sum = arr.reduce((acc, curr) => acc + curr, 0);
+    return sum;
+
+}
