@@ -272,7 +272,7 @@ $('#kFoldCalculation').click(function () {
             m1avgresult.append(`${errm1Bar} : ((`)
             for (i = 0; i < m1Data.length; i++) {
                 if (i == (m1Data.length - 1)) {
-                    m1avgresult.append(`${m1Data[i]})`);
+                    m1avgresult.append(`${m1Data[i]}`);
                 } else {
                     m1avgresult.append(`${m1Data[i]} + `);
                 }
@@ -284,7 +284,7 @@ $('#kFoldCalculation').click(function () {
             m2avgresult.append(`${errm2Bar} : ((`)
             for (i = 0; i < m2Data.length; i++) {
                 if (i == (m2Data.length - 1)) {
-                    m2avgresult.append(`${m2Data[i]})`);
+                    m2avgresult.append(`${m2Data[i]}`);
                 } else {
                     m2avgresult.append(`${m2Data[i]} + `);
                 }
