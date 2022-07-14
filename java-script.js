@@ -208,8 +208,8 @@ $('#reminderCalc').click(function () {
 
     ig = entropy - reminder;
     //..........................Finall result..........................
-    finalResult.append(`<b>Reminder = ${reminder}</b>`);
-    $('#ig-result').append(`<b>Information Gain = (${entropy} - (${reminder.toFixed(4)})) <br> => ${ig} </b>`);
+    finalResult.append(`Reminder = <b>${reminder}</b>`);
+    $('#ig-result').append(`Information Gain = (${entropy} - (${reminder.toFixed(4)})) <br> => <b>${ig}</b> <br>`);
 
 });
 
